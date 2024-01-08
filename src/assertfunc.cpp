@@ -1,6 +1,4 @@
-# pragma once
-
-#include <iostream>
+#include "assertfunc.h"
 
 #ifndef NDEBUG
 #   define M_Assert(Expr, Msg) \
