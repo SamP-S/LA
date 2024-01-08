@@ -1,5 +1,3 @@
-#pragma once
-
 #include "la_extended.hpp"
 
 namespace LA {
