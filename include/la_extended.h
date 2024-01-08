@@ -48,5 +48,5 @@ namespace LA {
     vec3 Cross(vec3 a, vec3 b);
     mat4 LookAt (vec3 from, vec3 to, vec3 up);
     vec4 Project(vec4 from, vec4 onto) ;
-
+    
 }

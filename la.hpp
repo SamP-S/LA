@@ -1,5 +1,3 @@
-#pragma once
-
 #include <iostream>
 #include <cmath>
 #include <assert.h>
@@ -296,7 +294,13 @@ namespace LA {
     }
     // Component-wise multiplication
     template<int N, typename T, typename U>
-    vec<N, T> operator*(vec<N, T> const& v1, vec<N, U> const& v2); 
+    vec<N, T> operator*(vec<N, T> const& v1, vec<N, U> const& v2) {
+        vec<N,T> total;
+        for (int i = 0; i < v1.len(); i++) {
+            total[i] = v1[i] * v2[i];
+        }
+        return total;
+    }
 
     // Scalar division
     template<int N, typename T, typename U>

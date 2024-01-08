@@ -1,4 +1,4 @@
-#include "la_extended.hpp"
+#include "la_extended.h"
 
 namespace LA {
 
