@@ -1,3 +1,6 @@
+#ifndef LA_LIBRARY
+#define LA_LIBRARY
+
 #include <iostream>
 #include <cmath>
 #include <assert.h>
@@ -944,3 +947,5 @@ namespace LA {
     using matd = mat<N, M, double>;
     
 }
+
+#endif
