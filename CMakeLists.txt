@@ -7,7 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # build extended LA library for 3D/OpenGL usage
 set(SRC
-    src/la_extended.cpp
+	src/assertfunc.cpp
+	src/la_extended.cpp
 )
 add_library(la STATIC ${SRC})
 target_include_directories(la PUBLIC include)

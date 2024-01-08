@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cmath>
 #include <assert.h>
-#include "assertfunc.hpp"
+#include "assertfunc.h"
 
 namespace LA {
 
