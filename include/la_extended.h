@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAGL_LIBRARY
+#define LAGL_LIBRARY
 
 #include "la.hpp"
 
@@ -50,3 +51,5 @@ namespace LA {
     vec4 Project(vec4 from, vec4 onto) ;
     
 }
+
+#endif
