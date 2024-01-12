@@ -96,6 +96,13 @@ namespace LA {
             std::copy(arr.begin(), arr.end(), this->m);
         }
 
+        vec(const std::vector<T>& vec) {
+            assert(vec.size() <= N);
+            for (int i = 0; i < vec.size(); i++) {
+                this->operator[](i) = vec.Get(i);
+            }
+        }
+
         // --- Unary Selector Functions --- //
 
         // Index Operator
