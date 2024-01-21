@@ -2,13 +2,11 @@
 
 namespace LA {
 
-    template<typename T>
-    double RadToDeg(T rad) {
+    double Degrees(double rad) {
         return (double)(rad * 180 / PI);
     }
 
-    template<typename T>
-    double DegToRad(T deg) {
+    double Radians(double deg) {
         return (double)(deg * PI / 180);
     }
 

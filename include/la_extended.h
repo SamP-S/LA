@@ -14,10 +14,8 @@ namespace LA {
     using mat3 = mat<3, 3, float>;
     using mat4 = mat<4, 4, float>;
 
-    template<typename T>
-    double RadToDeg(T rad);
-    template<typename T>
-    double DegToRad(T deg);
+    double Degrees(double rad);
+    double Radians(double deg);
 
     template<int N, typename T>
     double Mag(vec<N, T> v);
