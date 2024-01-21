@@ -162,13 +162,14 @@ namespace LA {
 
     mat4 Orthographic(float l, float r, float b, float t, float n, float f) {
         mat4 m = mat4(0.0f);
-        m[0] = 2 / (r - l);
+        m[0][0] = 2 / (r - l);
         m[1][1] = 2 / (t - b);
         m[2][2] = 1.0f / (f - n);
         m[3][0] = (l + r) / (l - r);
         m[3][1] = (t + b) / (b - t);
         m[3][2] = n / (n - f);
         m[3][3] = 1.0f;
+        return m;
     }
 
     vec3 Cross(vec3 a, vec3 b) {
@@ -185,10 +186,10 @@ namespace LA {
 		vec3 x = Normalise(Cross(up, z));
 		vec3 y = Cross(z, x);
 		return mat4({
-			x.x,  x.y,  x.z, (float)-Dot(from, x),
-			y.x,  y.y,  y.z, (float)-Dot(from, y),
-			z.x,  z.y,  z.z, (float)-Dot(from, z),
-			0.0f, 0.0f, 0.0f, 1.0f
+			{x.x,  x.y,  x.z, (float)-Dot(from, x)},
+			{y.x,  y.y,  y.z, (float)-Dot(from, y)},
+			{z.x,  z.y,  z.z, (float)-Dot(from, z)},
+			{0.0f, 0.0f, 0.0f, 1.0f}
         });
         return to_return;
     }
