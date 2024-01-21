@@ -125,15 +125,50 @@ namespace LA {
         return pos * rot * scl;
     }
 
+    // mat4 Frustrum(float left, float right, float bottom, float top, float near, float far) {
+    //     float hDist = right - left;
+    //     float vDist = top - bottom;
+    //     float dDist = far - near;
+    //     mat4 m = mat4(0.0f);
+
+    //     m[0][0] = 2.0f * near / hDist;
+    //     m[1][1] = 2.0f * near / vDist;
+    //     m[2][0] = (right + left) / hDist;
+    //     m[2][1] = (top + bottom) / vDist;
+    //     m[2][2] = (-far - near) / vDist;
+    //     m[2][3] = -1.0f;
+    //     m[3][2] = (-2.0f * near * far) / vDist;
+    //     return m;
+    // }
+
+    // mat4 Perspective(float fov, float aspect, float near, float far) {
+    //     float rad = fov * PI / 180.0f;
+    //     float ymax = near * tan(rad);
+    //     float xmax = ymax * aspect;
+    //     return Frustum(-xmax, xmax, -ymax, ymax, near, far);
+    // }
+
     mat4 Perspective(float fov, float aspect, float near, float far) {
         mat4 to_return = mat4(0.0f);
-        float tan_half_angle = tan(fov * (PI/180) / 2);
+        float rad = fov * (PI/180);
+        float tan_half_angle = tan(rad / 2);
         to_return[0][0] = 1 / (aspect * tan_half_angle);
         to_return[1][1] = 1 / (tan_half_angle);
         to_return[2][2] = -(far + near) / (far - near);
         to_return[2][3] = -1;
         to_return[3][2] = -(2 * far * near) / (far - near);
         return to_return;
+    }
+
+    mat4 Orthographic(float l, float r, float b, float t, float n, float f) {
+        mat4 m = mat4(0.0f);
+        m[0] = 2 / (r - l);
+        m[1][1] = 2 / (t - b);
+        m[2][2] = 1.0f / (f - n);
+        m[3][0] = (l + r) / (l - r);
+        m[3][1] = (t + b) / (b - t);
+        m[3][2] = n / (n - f);
+        m[3][3] = 1.0f;
     }
 
     vec3 Cross(vec3 a, vec3 b) {

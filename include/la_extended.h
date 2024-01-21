@@ -44,6 +44,7 @@ namespace LA {
 
     mat4 Transformation(vec3 position, vec3 rotation, vec3 scale);
     mat4 Perspective(float fov, float aspect, float near, float far);
+    mat4 Orthographic(float l, float r, float b, float t, float n, float f);
     vec3 Cross(vec3 a, vec3 b);
     mat4 LookAt (vec3 from, vec3 to, vec3 up);
     vec4 Project(vec4 from, vec4 onto) ;
