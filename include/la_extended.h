@@ -5,7 +5,7 @@
 
 namespace LA {
 
-    const float PI = 3.14159;
+    const float PI = 3.141592653589793238462643383279502884197169;
 
     using vec2 = vec<2, float>;
     using vec3 = vec<3, float>;
