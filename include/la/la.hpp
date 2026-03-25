@@ -5,7 +5,6 @@
 #include <cmath>
 #include <vector>
 #include <assert.h>
-#include "assertfunc.h"
 
 namespace LA {
 
@@ -501,11 +500,11 @@ namespace LA {
         }
 
         mat(std::initializer_list<std::initializer_list<T>> arg) {
-            M_Assert((int)arg.size() == this->height(), "ERROR: Invalid input (width)");
+            assert((int)arg.size() == this->height() && "ERROR: Invalid input (width)");
             int i = 0;
             int j = 0;
             for (std::initializer_list<T> list : arg) {
-                M_Assert((int)list.size() == this->width(), "ERROR: Invalid input (height)");
+                assert((int)list.size() == this->width() && "ERROR: Invalid input (height)");
                 i = 0;
                 for (T t : list) {
                     this->operator[](i)[j] = t;
